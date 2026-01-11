@@ -1,0 +1,13 @@
+{
+  "name": "hexagon",
+  "compatibility_date": "2026-01-11",
+  "assets": {
+    "directory": "./"
+  },
+  "routes": [
+    {
+      "pattern": "hexagon.icu",
+      "custom_domain": true
+    }
+  ]
+}
