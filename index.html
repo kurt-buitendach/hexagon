@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEXAGON | Tech Logo Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-grid"></div>
+    <div class="scan-lines"></div>
+    <div class="particle-container" id="particles"></div>
+
+    <!-- Lightning Effects Container -->
+    <canvas id="lightning-canvas"></canvas>
+
+    <!-- Main Content -->
+    <main class="showcase-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="logo-container">
+                    <!-- Outer Glow Rings -->
+                    <div class="glow-ring ring-1"></div>
+                    <div class="glow-ring ring-2"></div>
+                    <div class="glow-ring ring-3"></div>
+
+                    <!-- Main Hexagon Logo -->
+                    <div class="hexagon-wrapper">
+                        <svg class="hexagon-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 3D Isometric Hexagon with CPU - Matching Original Logo Exactly -->
+
+                            <!-- Outer 3D Hexagon Frame -->
+                            <g class="logo-main" stroke="#ffffff" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                                <!-- Outer hexagon -->
+                                <line class="hex-line" x1="200" y1="40" x2="320" y2="110"/>
+                                <line class="hex-line" x1="200" y1="40" x2="80" y2="110"/>
+                                <line class="hex-line" x1="320" y1="110" x2="320" y2="250"/>
+                                <line class="hex-line" x1="320" y1="250" x2="200" y2="320"/>
+                                <line class="hex-line" x1="80" y1="110" x2="80" y2="250"/>
+                                <line class="hex-line" x1="80" y1="250" x2="200" y2="320"/>
+
+                                <!-- Inner hexagon (3D depth effect) -->
+                                <line class="hex-line" x1="200" y1="70" x2="290" y2="125"/>
+                                <line class="hex-line" x1="200" y1="70" x2="110" y2="125"/>
+                                <line class="hex-line" x1="290" y1="125" x2="290" y2="235"/>
+                                <line class="hex-line" x1="290" y1="235" x2="200" y2="290"/>
+                                <line class="hex-line" x1="110" y1="125" x2="110" y2="235"/>
+                                <line class="hex-line" x1="110" y1="235" x2="200" y2="290"/>
+
+                                <!-- Bottom 3D connector -->
+                                <line class="hex-line" x1="200" y1="320" x2="200" y2="290"/>
+                            </g>
+
+                            <!-- Circuit Traces with Nodes - positioned ON the inner hexagon edges -->
+                            <g class="circuit-traces" stroke="#ffffff" fill="none" stroke-width="2.5" stroke-linecap="round">
+
+                                <!-- LEFT SIDE - Top diagonal edge (from top-left corner going down-right) -->
+                                <!-- Node on upper-left diagonal, trace goes inward -->
+                                <circle class="node" cx="140" cy="105" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-1" d="M140,105 L155,120 L155,145"/>
+
+                                <!-- LEFT SIDE - Vertical edge - upper node -->
+                                <circle class="node" cx="110" cy="155" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-2" d="M110,155 L145,155"/>
+
+                                <!-- LEFT SIDE - Vertical edge - lower node -->
+                                <circle class="node" cx="110" cy="205" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-3" d="M110,205 L145,205"/>
+
+                                <!-- LEFT SIDE - Bottom diagonal edge -->
+                                <circle class="node" cx="140" cy="255" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-4" d="M140,255 L155,240 L155,215"/>
+
+                                <!-- RIGHT SIDE - Top diagonal edge -->
+                                <circle class="node" cx="260" cy="105" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-5" d="M260,105 L245,120 L245,145"/>
+
+                                <!-- RIGHT SIDE - Vertical edge - upper node -->
+                                <circle class="node" cx="290" cy="155" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-6" d="M290,155 L255,155"/>
+
+                                <!-- RIGHT SIDE - Vertical edge - lower node -->
+                                <circle class="node" cx="290" cy="205" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-7" d="M290,205 L255,205"/>
+
+                                <!-- RIGHT SIDE - Bottom diagonal edge -->
+                                <circle class="node" cx="260" cy="255" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-8" d="M260,255 L245,240 L245,215"/>
+
+                                <!-- BOTTOM - Left diagonal -->
+                                <circle class="node" cx="155" cy="290" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-9" d="M155,290 L170,270 L170,255"/>
+
+                                <!-- BOTTOM - Right diagonal -->
+                                <circle class="node" cx="245" cy="290" r="6" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <path class="trace trace-10" d="M245,290 L230,270 L230,255"/>
+                            </g>
+
+                            <!-- Central CPU Chip -->
+                            <g class="cpu-chip" stroke="#ffffff" fill="none" stroke-width="3">
+                                <!-- CPU Outer Frame -->
+                                <rect class="cpu-frame" x="145" y="145" width="110" height="110" rx="5"/>
+
+                                <!-- CPU Inner Core (filled) -->
+                                <rect class="cpu-core" x="170" y="170" width="60" height="60" rx="3" fill="#ffffff"/>
+
+                                <!-- CPU Pins - Top (4 pins) -->
+                                <line class="pin" x1="165" y1="145" x2="165" y2="125"/>
+                                <line class="pin" x1="185" y1="145" x2="185" y2="125"/>
+                                <line class="pin" x1="215" y1="145" x2="215" y2="125"/>
+                                <line class="pin" x1="235" y1="145" x2="235" y2="125"/>
+
+                                <!-- CPU Pins - Bottom (4 pins) -->
+                                <line class="pin" x1="165" y1="255" x2="165" y2="275"/>
+                                <line class="pin" x1="185" y1="255" x2="185" y2="275"/>
+                                <line class="pin" x1="215" y1="255" x2="215" y2="275"/>
+                                <line class="pin" x1="235" y1="255" x2="235" y2="275"/>
+
+                                <!-- CPU Pins - Left (4 pins) -->
+                                <line class="pin" x1="145" y1="165" x2="125" y2="165"/>
+                                <line class="pin" x1="145" y1="185" x2="125" y2="185"/>
+                                <line class="pin" x1="145" y1="215" x2="125" y2="215"/>
+                                <line class="pin" x1="145" y1="235" x2="125" y2="235"/>
+
+                                <!-- CPU Pins - Right (4 pins) -->
+                                <line class="pin" x1="255" y1="165" x2="275" y2="165"/>
+                                <line class="pin" x1="255" y1="185" x2="275" y2="185"/>
+                                <line class="pin" x1="255" y1="215" x2="275" y2="215"/>
+                                <line class="pin" x1="255" y1="235" x2="275" y2="235"/>
+                            </g>
+                        </svg>
+
+                        <!-- Rotating Border Effect -->
+                        <div class="rotating-border"></div>
+
+                        <!-- Electric Arcs -->
+                        <div class="electric-arc arc-1"></div>
+                        <div class="electric-arc arc-2"></div>
+                        <div class="electric-arc arc-3"></div>
+                    </div>
+                </div>
+
+                <!-- Logo Text -->
+                <h1 class="logo-text">
+                    <span class="letter" data-letter="H">H</span>
+                    <span class="letter" data-letter="E">E</span>
+                    <span class="letter" data-letter="X">X</span>
+                    <span class="letter" data-letter="A">A</span>
+                    <span class="letter" data-letter="G">G</span>
+                    <span class="letter" data-letter="O">O</span>
+                    <span class="letter" data-letter="N">N</span>
+                </h1>
+
+                <p class="tagline">
+                    <span class="tag-word">FUTURE</span>
+                    <span class="tag-separator">|</span>
+                    <span class="tag-word">TECHNOLOGY</span>
+                    <span class="tag-separator">|</span>
+                    <span class="tag-word">INNOVATION</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                </div>
+                <div class="stat-value" data-target="99.9">0</div>
+                <div class="stat-label">UPTIME %</div>
+                <div class="stat-glow"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="stat-value" data-target="1.2">0</div>
+                <div class="stat-label">MS LATENCY</div>
+                <div class="stat-glow"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="stat-value" data-target="50000">0</div>
+                <div class="stat-label">CONNECTIONS</div>
+                <div class="stat-glow"></div>
+            </div>
+        </section>
+
+        <!-- Feature Hexagons -->
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="title-line"></span>
+                <span class="title-text">CORE CAPABILITIES</span>
+                <span class="title-line"></span>
+            </h2>
+            <div class="hex-grid">
+                <div class="hex-feature" data-index="1">
+                    <div class="hex-content">
+                        <div class="hex-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>NEURAL PROCESSING</h3>
+                        <p>Advanced AI-driven architecture</p>
+                    </div>
+                    <div class="hex-border"></div>
+                    <div class="hex-glow"></div>
+                </div>
+                <div class="hex-feature" data-index="2">
+                    <div class="hex-content">
+                        <div class="hex-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v10"/>
+                                <path d="M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24"/>
+                                <path d="M1 12h6m6 0h10"/>
+                                <path d="M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/>
+                            </svg>
+                        </div>
+                        <h3>QUANTUM SECURE</h3>
+                        <p>Military-grade encryption</p>
+                    </div>
+                    <div class="hex-border"></div>
+                    <div class="hex-glow"></div>
+                </div>
+                <div class="hex-feature" data-index="3">
+                    <div class="hex-content">
+                        <div class="hex-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h3>LIGHTNING FAST</h3>
+                        <p>Sub-millisecond response</p>
+                    </div>
+                    <div class="hex-border"></div>
+                    <div class="hex-glow"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">HEXAGON</div>
+            <div class="footer-line"></div>
+            <div class="footer-text">PIONEERING THE FUTURE</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
